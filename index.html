@@ -2,7 +2,7 @@
 <html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" id="viewport-meta" content="width=device-width, initial-scale=1.0">
   <title>هتل مدینة العطاء - نجف اشرف | جدول رزرو اتوبوس‌ها</title>
   
   <!-- Google Fonts: Cairo & Tajawal -->
@@ -1926,30 +1926,18 @@
     }
 
     /* ==========================================================================
-       7. Mobile & Tablet Responsive Optimization
+       7. PC-Like Full Schedule Layout on Phone & Responsive Login
        ========================================================================== */
-    @media screen and (max-width: 900px) {
-      #app,
-      header.main-header,
-      #admin-bar,
-      .stats-section,
-      .controls-section,
-      .schedule-section,
-      .legend-section,
-      footer.main-footer {
-        width: 100%;
-        max-width: 100%;
-        min-width: 0;
-      }
-
-      .header-inner {
-        padding: 10px 14px;
-        gap: 10px;
-      }
-
-      .header-actions {
-        flex-wrap: wrap;
-      }
+    body.pc-layout-active,
+    body.pc-layout-active #app,
+    body.pc-layout-active header.main-header,
+    body.pc-layout-active #admin-bar,
+    body.pc-layout-active .stats-section,
+    body.pc-layout-active .controls-section,
+    body.pc-layout-active .schedule-section,
+    body.pc-layout-active .legend-section,
+    body.pc-layout-active footer.main-footer {
+      min-width: 1580px;
     }
 
     @media screen and (max-width: 768px) {
@@ -1977,408 +1965,8 @@
         padding-bottom: 10px;
       }
       .form-control {
-        font-size: 16px; /* Prevents iOS Safari auto-zoom on focus */
-        padding: 11px 38px 11px 12px;
-      }
-
-      /* --- Header Mobile --- */
-      header.main-header {
-        position: relative; /* Frees vertical screen space while scrolling table on phones */
-      }
-      .header-inner {
-        flex-direction: column;
-        align-items: stretch;
-        padding: 10px 12px;
-        gap: 10px;
-      }
-      .brand-section {
-        justify-content: center;
-        gap: 10px;
-      }
-      .brand-logo {
-        width: 54px;
-        height: 38px;
-      }
-      .brand-texts h1 {
-        font-size: 18px;
-      }
-      .brand-texts p {
-        font-size: 11.5px;
-      }
-      .header-center-info {
-        width: 100%;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 8px;
-        padding: 6px 10px;
-        border-radius: 10px;
-      }
-      .live-clock {
-        font-size: 11.5px;
-        gap: 5px;
-      }
-      .header-actions {
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-      }
-      .header-actions > button,
-      .header-actions .lang-switch-btn,
-      .header-actions .admin-toggle-btn {
-        width: 100%;
-        justify-content: center;
-        padding: 8px 10px;
-        font-size: 12.5px;
-        white-space: nowrap;
-      }
-
-      /* --- Admin Bar Mobile --- */
-      #admin-bar {
-        padding: 10px 12px;
-      }
-      .admin-bar-inner {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 10px;
-      }
-      .admin-badge-tag {
-        justify-content: center;
-        text-align: center;
-        font-size: 12px;
-      }
-      .admin-controls-group {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-        width: 100%;
-      }
-      .admin-controls-group > button {
-        width: 100%;
-        justify-content: center;
-        padding: 8px 8px;
-        font-size: 12px;
-        white-space: nowrap;
-      }
-      .admin-controls-group > button.btn-gold {
-        grid-column: 1 / -1;
-        padding: 10px;
-        font-size: 13px;
-      }
-
-      /* --- Stats Section Mobile --- */
-      .stats-section {
-        margin-top: 12px;
-        padding: 0 10px;
-      }
-      .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-      }
-      .stat-card {
-        padding: 10px 12px;
-        gap: 10px;
-        border-radius: 12px;
-      }
-      .stat-icon {
-        width: 36px;
-        height: 36px;
-        font-size: 15px;
-        border-radius: 8px;
-      }
-      .stat-info h3 {
-        font-size: 11px;
-      }
-      .stat-info .stat-number {
         font-size: 16px;
-      }
-      .stat-info .stat-sub {
-        font-size: 10px;
-      }
-
-      /* --- Controls Toolbar Mobile --- */
-      .controls-section {
-        margin-top: 10px;
-        padding: 0 10px;
-      }
-      .controls-bar {
-        flex-direction: column;
-        align-items: stretch;
-        padding: 10px;
-        gap: 8px;
-        border-radius: 12px;
-      }
-      .date-navigation-group {
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 6px;
-      }
-      .date-display-badge {
-        order: -1;
-        width: 100%;
-        justify-content: space-between;
-        padding: 7px 12px;
-        font-size: 12.5px;
-      }
-      .date-display-badge input[type="date"] {
-        font-size: 13px;
-      }
-      .date-navigation-group .btn-navy {
-        flex: 1;
-        padding: 7px 10px;
-        font-size: 12.5px;
-        white-space: nowrap;
-      }
-      .date-nav-btn {
-        width: 36px;
-        height: 36px;
-        flex-shrink: 0;
-      }
-      .filter-search-group {
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-      }
-      .search-box {
-        width: 100%;
-        flex: 1 1 100%;
-      }
-      .search-box input,
-      .search-box input:focus {
-        width: 100% !important;
-        font-size: 14px;
-        padding: 8px 34px 8px 12px;
-      }
-      .filter-select {
-        flex: 1 1 calc(50% - 4px);
-        width: 100%;
-        font-size: 13px;
-        padding: 8px 10px;
-      }
-
-      /* --- Schedule Table Mobile --- */
-      .schedule-section {
-        margin-top: 10px;
-        padding: 0 10px;
-      }
-      .table-container {
-        border-radius: 12px;
-        -webkit-overflow-scrolling: touch;
-      }
-      table.schedule-table {
-        min-width: 0;
-        width: max-content;
-      }
-      .schedule-table thead th {
-        padding: 10px 6px;
-        font-size: 11.5px;
-      }
-      .schedule-table tbody td {
-        height: 76px;
-        padding: 4px;
-      }
-
-      /* Compact sticky date columns on mobile so bus columns are clearly visible */
-      .col-sticky-1 {
-        position: sticky;
-        right: 0;
-        width: 72px;
-        min-width: 72px;
-        max-width: 72px;
-        box-shadow: none;
-      }
-      .col-sticky-2 {
-        position: sticky;
-        right: 72px;
-        width: 76px;
-        min-width: 76px;
-        max-width: 76px;
-        border-left: 2px solid #243058 !important;
-        box-shadow: -3px 0 8px rgba(15, 21, 40, 0.12);
-      }
-      .col-sticky-3 {
-        position: static !important;
-        width: 52px;
-        min-width: 52px;
-        max-width: 52px;
-      }
-      .col-sticky-4 {
-        display: none !important;
-      }
-      thead th.col-sticky-3 {
-        z-index: 20 !important;
-      }
-      tbody td.col-sticky-3 {
-        z-index: 1 !important;
-      }
-
-      .meta-date-gregorian {
-        font-size: 10.5px;
-        letter-spacing: -0.3px;
-      }
-      .today-tag {
-        font-size: 8.5px;
-        padding: 1px 5px;
-        margin-top: 2px;
-      }
-      .meta-date-persian {
-        font-size: 10.5px;
-      }
-      .meta-persian-name {
-        font-size: 9px;
-        line-height: 1.2;
-      }
-      .meta-day-name {
-        font-size: 11px;
-      }
-
-      .bus-header {
-        min-width: 118px;
-        width: 118px;
-      }
-      .bus-cell {
-        min-width: 118px;
-        width: 118px;
-      }
-      .bus-badge {
-        font-size: 11.5px;
-        padding: 2px 9px;
-        gap: 4px;
-      }
-
-      .cell-available,
-      .booking-card,
-      .continuation-cell {
-        height: 68px;
-        padding: 4px 6px;
-      }
-      .available-badge {
-        font-size: 11.5px;
-        gap: 4px;
-      }
-      .available-action-hint {
-        font-size: 9.5px;
-      }
-      .badge-status-tag {
-        font-size: 9px;
-        padding: 1px 4px;
-      }
-      .nights-pill {
-        font-size: 9px;
-        padding: 1px 4px;
-      }
-      .company-title {
-        font-size: 11px;
-      }
-      .card-meta-row {
-        font-size: 9px;
-      }
-      .card-substatus {
-        font-size: 9px;
-      }
-      .cont-badge {
-        font-size: 9px;
-        padding: 1px 6px;
-      }
-      .cont-company {
-        font-size: 10px;
-        max-width: 104px;
-      }
-      .cont-night-index {
-        font-size: 9px;
-      }
-
-      /* --- Legend & Footer Mobile --- */
-      .legend-section {
-        margin-top: 10px;
-        padding: 0 10px;
-      }
-      .legend-bar {
-        padding: 10px 12px;
-        gap: 8px;
-        justify-content: flex-start;
-        border-radius: 12px;
-      }
-      .legend-item {
-        font-size: 11.5px;
-        width: 100%;
-      }
-      footer.main-footer {
-        margin: 16px auto 20px;
-        padding: 12px 10px 0;
-        font-size: 11.5px;
-      }
-      .footer-links {
-        flex-wrap: wrap;
-        gap: 8px;
-        font-size: 11px;
-      }
-
-      /* --- Modals & Toasts Mobile --- */
-      .modal-overlay {
-        padding: 10px;
-      }
-      .modal-content {
-        border-radius: 16px;
-        max-height: 92vh;
-        display: flex;
-        flex-direction: column;
-      }
-      #booking-form {
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-        min-height: 0;
-        overflow: hidden;
-      }
-      .modal-header {
-        padding: 14px 16px;
-        flex-shrink: 0;
-      }
-      .modal-header h3 {
-        font-size: 15px;
-      }
-      .modal-body {
-        padding: 14px 16px;
-        max-height: calc(92vh - 125px);
-        flex: 1;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
-      }
-      .modal-footer {
-        padding: 12px 16px;
-        flex-wrap: wrap;
-        gap: 8px;
-        flex-shrink: 0;
-      }
-      .form-input,
-      .form-select,
-      .form-textarea {
-        font-size: 16px; /* Prevents iOS Safari zoom */
-      }
-      .detail-item {
-        font-size: 13px;
-        flex-wrap: wrap;
-        gap: 4px;
-      }
-      #toast-container {
-        left: 12px;
-        right: 12px;
-        bottom: 16px;
-      }
-      .toast-msg {
-        max-width: 100%;
-        font-size: 13px;
-        padding: 10px 14px;
-      }
-      #back-to-top-btn {
-        width: 42px !important;
-        height: 42px !important;
-        bottom: 16px !important;
-        left: 16px !important;
-        font-size: 17px !important;
+        padding: 11px 38px 11px 12px;
       }
     }
   </style>
@@ -3800,6 +3388,27 @@
       };
     }
 
+    function getUtf8ByteLength(str) {
+      try {
+        return new Blob([str]).size;
+      } catch (e) {
+        return str.length * 2;
+      }
+    }
+
+    function hasLocalCustomChanges() {
+      if (Array.isArray(AppState.deletedBookings) && AppState.deletedBookings.length > 0) return true;
+      if (Array.isArray(AppState.bookings)) {
+        for (var i = 0; i < AppState.bookings.length; i++) {
+          var b = AppState.bookings[i];
+          if (b && b.id && String(b.id).indexOf('b_sample_') !== 0) {
+            return true;
+          }
+        }
+      }
+      return false;
+    }
+
     function pushStateToCloud() {
       AppState.syncVersion = (AppState.syncVersion || 0) + 1;
       AppState.hasSyncedOnce = true;
@@ -3807,6 +3416,7 @@
 
       var payload = buildCloudPayload();
       var jsonStr = JSON.stringify(payload);
+      var utf8Bytes = getUtf8ByteLength(jsonStr);
 
       // 1. Push to persistent REST Cloud Object
       fetch(CLOUD_SYNC_CONFIG.REST_OBJ_URL, {
@@ -3819,7 +3429,8 @@
       }).catch(function() {});
 
       // 2. Push to real-time ntfy stream (instant SSE broadcast + cached history)
-      var ntfyBody = (jsonStr.length <= 3600)
+      // Check actual UTF-8 byte length so ntfy never converts >4096 byte Arabic/Persian JSON into an attachment
+      var ntfyBody = (utf8Bytes <= 3500)
         ? jsonStr
         : JSON.stringify({
             syncVersion: payload.syncVersion,
@@ -3839,7 +3450,9 @@
       if (!isInitialSync && remote.deviceId === CLOUD_SYNC_CONFIG.DEVICE_ID) return false;
 
       if (remote.notifyOnly) {
-        fetchFromRestCloud();
+        fetchFromRestCloud().then(function(restData) {
+          if (restData) applyCloudPayload(restData, true);
+        });
         return false;
       }
 
@@ -3848,27 +3461,41 @@
       var remoteVer = parseInt(remote.syncVersion, 10) || 0;
       var localVer = parseInt(AppState.syncVersion, 10) || 0;
 
-      // If cloud is completely uninitialized (version 0), push our local state to initialize it
+      // If cloud is completely uninitialized (version 0):
+      // Only push automatically if this device has real user bookings/deletions
       if (remoteVer === 0) {
-        pushStateToCloud();
+        if (hasLocalCustomChanges()) {
+          pushStateToCloud();
+        }
         return true;
       }
 
-      // If we haven't synced this browser before, preserve any custom user-created bookings made offline/locally
+      // If we haven't synced this browser before, preserve any custom user-created bookings & deletions made locally
       var localCustomToMerge = [];
-      if (!AppState.hasSyncedOnce && Array.isArray(AppState.bookings)) {
+      var localDeletedToMerge = [];
+      if (!AppState.hasSyncedOnce) {
         var remoteDeletedIds = {};
         if (Array.isArray(remote.deletedBookings)) {
           remote.deletedBookings.forEach(function(d) { if (d && d.id) remoteDeletedIds[d.id] = true; });
         }
+        if (Array.isArray(AppState.deletedBookings)) {
+          AppState.deletedBookings.forEach(function(d) {
+            if (d && d.id && !remoteDeletedIds[d.id]) {
+              localDeletedToMerge.push(d);
+              remoteDeletedIds[d.id] = true;
+            }
+          });
+        }
         var remoteIds = {};
         remote.bookings.forEach(function(b) { if (b && b.id) remoteIds[b.id] = true; });
 
-        AppState.bookings.forEach(function(b) {
-          if (b && b.id && String(b.id).indexOf('b_sample_') !== 0 && !remoteIds[b.id] && !remoteDeletedIds[b.id]) {
-            localCustomToMerge.push(b);
-          }
-        });
+        if (Array.isArray(AppState.bookings)) {
+          AppState.bookings.forEach(function(b) {
+            if (b && b.id && String(b.id).indexOf('b_sample_') !== 0 && !remoteIds[b.id] && !remoteDeletedIds[b.id]) {
+              localCustomToMerge.push(b);
+            }
+          });
+        }
       }
 
       if (remoteVer >= localVer || !AppState.hasSyncedOnce) {
@@ -3886,8 +3513,22 @@
         }
         AppState.hasSyncedOnce = true;
 
+        var needsPushBack = false;
+        if (localDeletedToMerge.length > 0) {
+          var delMap = {};
+          localDeletedToMerge.forEach(function(d) {
+            delMap[d.id] = true;
+            AppState.deletedBookings.push(d);
+          });
+          AppState.bookings = AppState.bookings.filter(function(b) { return !delMap[b.id]; });
+          needsPushBack = true;
+        }
         if (localCustomToMerge.length > 0) {
           localCustomToMerge.forEach(function(b) { AppState.bookings.push(b); });
+          needsPushBack = true;
+        }
+
+        if (needsPushBack) {
           saveLocalStateOnly();
           scheduleCloudPush();
         } else {
@@ -3951,15 +3592,15 @@
         var restVer = (restData && restData.syncVersion !== undefined) ? parseInt(restData.syncVersion, 10) : -1;
 
         var winner = null;
-        if (ntfyVer >= restVer && ntfyData) {
-          winner = ntfyData;
-        } else if (restData) {
+        if (restVer >= ntfyVer && restData && Array.isArray(restData.bookings)) {
           winner = restData;
+        } else if (ntfyData && Array.isArray(ntfyData.bookings)) {
+          winner = ntfyData;
         }
 
         if (winner) {
           applyCloudPayload(winner, true);
-        } else if (!AppState.hasSyncedOnce) {
+        } else if (!AppState.hasSyncedOnce && hasLocalCustomChanges()) {
           pushStateToCloud();
         }
       });
@@ -3980,6 +3621,10 @@
               if (wrapper && wrapper.message) {
                 var remote = JSON.parse(wrapper.message);
                 applyCloudPayload(remote, false);
+              } else if (wrapper && wrapper.attachment) {
+                fetchFromRestCloud().then(function(restData) {
+                  if (restData) applyCloudPayload(restData, true);
+                });
               }
             } catch (err) {}
           };
@@ -3996,10 +3641,10 @@
         }
       });
 
-      // 4. Periodic fallback sync every 10 seconds
+      // 4. Periodic fallback sync every 5 seconds
       setInterval(function() {
         syncFromCloudNow();
-      }, 10000);
+      }, 5000);
     }
 
     /* ==========================================================================
@@ -4083,8 +3728,11 @@
     function applyAuthView() {
       var loginPage = document.getElementById('login-page');
       var app = document.getElementById('app');
+      var vpMeta = document.getElementById('viewport-meta');
 
       if (AppState.isLoggedIn) {
+        if (vpMeta) vpMeta.setAttribute('content', 'width=1580');
+        document.body.classList.add('pc-layout-active');
         loginPage.style.display = 'none';
         app.style.display = 'flex';
         document.body.style.overflow = 'auto';
@@ -4094,6 +3742,8 @@
         renderTable();
         renderStats();
       } else {
+        if (vpMeta) vpMeta.setAttribute('content', 'width=device-width, initial-scale=1.0');
+        document.body.classList.remove('pc-layout-active');
         loginPage.style.display = 'flex';
         app.style.display = 'none';
       }
