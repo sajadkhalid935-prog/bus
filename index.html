@@ -69,7 +69,12 @@
       --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
     * {
       box-sizing: border-box;
       margin: 0;
@@ -87,6 +92,8 @@
         radial-gradient(circle at 0% 100%, rgba(201, 168, 76, 0.06) 0%, transparent 50%);
       color: var(--text-white);
       min-height: 100vh;
+      width: 100%;
+      max-width: 100%;
       line-height: 1.5;
       overflow-x: hidden;
       direction: rtl;
@@ -1917,6 +1924,463 @@
       justify-content: flex-end;
       margin-bottom: 6px;
     }
+
+    /* ==========================================================================
+       7. Mobile & Tablet Responsive Optimization
+       ========================================================================== */
+    @media screen and (max-width: 900px) {
+      #app,
+      header.main-header,
+      #admin-bar,
+      .stats-section,
+      .controls-section,
+      .schedule-section,
+      .legend-section,
+      footer.main-footer {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+      }
+
+      .header-inner {
+        padding: 10px 14px;
+        gap: 10px;
+      }
+
+      .header-actions {
+        flex-wrap: wrap;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      /* --- Login Page Mobile --- */
+      #login-page {
+        padding: 14px;
+      }
+      .login-container {
+        padding: 24px 18px;
+        border-radius: 18px;
+      }
+      .hotel-emblem {
+        width: 135px;
+        margin-bottom: 8px;
+      }
+      .hotel-title {
+        font-size: 22px;
+      }
+      .hotel-sub {
+        font-size: 13px;
+      }
+      .portal-desc {
+        font-size: 12px;
+        margin-bottom: 18px;
+        padding-bottom: 10px;
+      }
+      .form-control {
+        font-size: 16px; /* Prevents iOS Safari auto-zoom on focus */
+        padding: 11px 38px 11px 12px;
+      }
+
+      /* --- Header Mobile --- */
+      header.main-header {
+        position: relative; /* Frees vertical screen space while scrolling table on phones */
+      }
+      .header-inner {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 10px 12px;
+        gap: 10px;
+      }
+      .brand-section {
+        justify-content: center;
+        gap: 10px;
+      }
+      .brand-logo {
+        width: 54px;
+        height: 38px;
+      }
+      .brand-texts h1 {
+        font-size: 18px;
+      }
+      .brand-texts p {
+        font-size: 11.5px;
+      }
+      .header-center-info {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 6px 10px;
+        border-radius: 10px;
+      }
+      .live-clock {
+        font-size: 11.5px;
+        gap: 5px;
+      }
+      .header-actions {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+      }
+      .header-actions > button,
+      .header-actions .lang-switch-btn,
+      .header-actions .admin-toggle-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 8px 10px;
+        font-size: 12.5px;
+        white-space: nowrap;
+      }
+
+      /* --- Admin Bar Mobile --- */
+      #admin-bar {
+        padding: 10px 12px;
+      }
+      .admin-bar-inner {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+      }
+      .admin-badge-tag {
+        justify-content: center;
+        text-align: center;
+        font-size: 12px;
+      }
+      .admin-controls-group {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        width: 100%;
+      }
+      .admin-controls-group > button {
+        width: 100%;
+        justify-content: center;
+        padding: 8px 8px;
+        font-size: 12px;
+        white-space: nowrap;
+      }
+      .admin-controls-group > button.btn-gold {
+        grid-column: 1 / -1;
+        padding: 10px;
+        font-size: 13px;
+      }
+
+      /* --- Stats Section Mobile --- */
+      .stats-section {
+        margin-top: 12px;
+        padding: 0 10px;
+      }
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+      }
+      .stat-card {
+        padding: 10px 12px;
+        gap: 10px;
+        border-radius: 12px;
+      }
+      .stat-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 15px;
+        border-radius: 8px;
+      }
+      .stat-info h3 {
+        font-size: 11px;
+      }
+      .stat-info .stat-number {
+        font-size: 16px;
+      }
+      .stat-info .stat-sub {
+        font-size: 10px;
+      }
+
+      /* --- Controls Toolbar Mobile --- */
+      .controls-section {
+        margin-top: 10px;
+        padding: 0 10px;
+      }
+      .controls-bar {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 10px;
+        gap: 8px;
+        border-radius: 12px;
+      }
+      .date-navigation-group {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .date-display-badge {
+        order: -1;
+        width: 100%;
+        justify-content: space-between;
+        padding: 7px 12px;
+        font-size: 12.5px;
+      }
+      .date-display-badge input[type="date"] {
+        font-size: 13px;
+      }
+      .date-navigation-group .btn-navy {
+        flex: 1;
+        padding: 7px 10px;
+        font-size: 12.5px;
+        white-space: nowrap;
+      }
+      .date-nav-btn {
+        width: 36px;
+        height: 36px;
+        flex-shrink: 0;
+      }
+      .filter-search-group {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .search-box {
+        width: 100%;
+        flex: 1 1 100%;
+      }
+      .search-box input,
+      .search-box input:focus {
+        width: 100% !important;
+        font-size: 14px;
+        padding: 8px 34px 8px 12px;
+      }
+      .filter-select {
+        flex: 1 1 calc(50% - 4px);
+        width: 100%;
+        font-size: 13px;
+        padding: 8px 10px;
+      }
+
+      /* --- Schedule Table Mobile --- */
+      .schedule-section {
+        margin-top: 10px;
+        padding: 0 10px;
+      }
+      .table-container {
+        border-radius: 12px;
+        -webkit-overflow-scrolling: touch;
+      }
+      table.schedule-table {
+        min-width: 0;
+        width: max-content;
+      }
+      .schedule-table thead th {
+        padding: 10px 6px;
+        font-size: 11.5px;
+      }
+      .schedule-table tbody td {
+        height: 76px;
+        padding: 4px;
+      }
+
+      /* Compact sticky date columns on mobile so bus columns are clearly visible */
+      .col-sticky-1 {
+        position: sticky;
+        right: 0;
+        width: 72px;
+        min-width: 72px;
+        max-width: 72px;
+        box-shadow: none;
+      }
+      .col-sticky-2 {
+        position: sticky;
+        right: 72px;
+        width: 76px;
+        min-width: 76px;
+        max-width: 76px;
+        border-left: 2px solid #243058 !important;
+        box-shadow: -3px 0 8px rgba(15, 21, 40, 0.12);
+      }
+      .col-sticky-3 {
+        position: static !important;
+        width: 52px;
+        min-width: 52px;
+        max-width: 52px;
+      }
+      .col-sticky-4 {
+        display: none !important;
+      }
+      thead th.col-sticky-3 {
+        z-index: 20 !important;
+      }
+      tbody td.col-sticky-3 {
+        z-index: 1 !important;
+      }
+
+      .meta-date-gregorian {
+        font-size: 10.5px;
+        letter-spacing: -0.3px;
+      }
+      .today-tag {
+        font-size: 8.5px;
+        padding: 1px 5px;
+        margin-top: 2px;
+      }
+      .meta-date-persian {
+        font-size: 10.5px;
+      }
+      .meta-persian-name {
+        font-size: 9px;
+        line-height: 1.2;
+      }
+      .meta-day-name {
+        font-size: 11px;
+      }
+
+      .bus-header {
+        min-width: 118px;
+        width: 118px;
+      }
+      .bus-cell {
+        min-width: 118px;
+        width: 118px;
+      }
+      .bus-badge {
+        font-size: 11.5px;
+        padding: 2px 9px;
+        gap: 4px;
+      }
+
+      .cell-available,
+      .booking-card,
+      .continuation-cell {
+        height: 68px;
+        padding: 4px 6px;
+      }
+      .available-badge {
+        font-size: 11.5px;
+        gap: 4px;
+      }
+      .available-action-hint {
+        font-size: 9.5px;
+      }
+      .badge-status-tag {
+        font-size: 9px;
+        padding: 1px 4px;
+      }
+      .nights-pill {
+        font-size: 9px;
+        padding: 1px 4px;
+      }
+      .company-title {
+        font-size: 11px;
+      }
+      .card-meta-row {
+        font-size: 9px;
+      }
+      .card-substatus {
+        font-size: 9px;
+      }
+      .cont-badge {
+        font-size: 9px;
+        padding: 1px 6px;
+      }
+      .cont-company {
+        font-size: 10px;
+        max-width: 104px;
+      }
+      .cont-night-index {
+        font-size: 9px;
+      }
+
+      /* --- Legend & Footer Mobile --- */
+      .legend-section {
+        margin-top: 10px;
+        padding: 0 10px;
+      }
+      .legend-bar {
+        padding: 10px 12px;
+        gap: 8px;
+        justify-content: flex-start;
+        border-radius: 12px;
+      }
+      .legend-item {
+        font-size: 11.5px;
+        width: 100%;
+      }
+      footer.main-footer {
+        margin: 16px auto 20px;
+        padding: 12px 10px 0;
+        font-size: 11.5px;
+      }
+      .footer-links {
+        flex-wrap: wrap;
+        gap: 8px;
+        font-size: 11px;
+      }
+
+      /* --- Modals & Toasts Mobile --- */
+      .modal-overlay {
+        padding: 10px;
+      }
+      .modal-content {
+        border-radius: 16px;
+        max-height: 92vh;
+        display: flex;
+        flex-direction: column;
+      }
+      #booking-form {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        min-height: 0;
+        overflow: hidden;
+      }
+      .modal-header {
+        padding: 14px 16px;
+        flex-shrink: 0;
+      }
+      .modal-header h3 {
+        font-size: 15px;
+      }
+      .modal-body {
+        padding: 14px 16px;
+        max-height: calc(92vh - 125px);
+        flex: 1;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      .modal-footer {
+        padding: 12px 16px;
+        flex-wrap: wrap;
+        gap: 8px;
+        flex-shrink: 0;
+      }
+      .form-input,
+      .form-select,
+      .form-textarea {
+        font-size: 16px; /* Prevents iOS Safari zoom */
+      }
+      .detail-item {
+        font-size: 13px;
+        flex-wrap: wrap;
+        gap: 4px;
+      }
+      #toast-container {
+        left: 12px;
+        right: 12px;
+        bottom: 16px;
+      }
+      .toast-msg {
+        max-width: 100%;
+        font-size: 13px;
+        padding: 10px 14px;
+      }
+      #back-to-top-btn {
+        width: 42px !important;
+        height: 42px !important;
+        bottom: 16px !important;
+        left: 16px !important;
+        font-size: 17px !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -2985,7 +3449,14 @@
       ADMIN: 'madinat_alata_admin',
       BOOKINGS: 'madinat_alata_bookings_v2',
       DELETED_BOOKINGS: 'madinat_alata_deleted_bookings_v2',
-      SETTINGS: 'madinat_alata_settings_v2'
+      SETTINGS: 'madinat_alata_settings_v2',
+      SYNC_META: 'madinat_alata_sync_meta_v2'
+    };
+
+    const CLOUD_SYNC_CONFIG = {
+      NTFY_BASE: 'https://ntfy.sh/madinat_alata_najaf_live_sync_313_v2',
+      REST_OBJ_URL: 'https://api.restful-api.dev/objects/ff808181a09d98f701a165fb78a46038',
+      DEVICE_ID: 'dev_' + Math.random().toString(36).substring(2, 10) + '_' + Date.now()
     };
 
     var AppState = window.AppState = {
@@ -3002,6 +3473,9 @@
       statusFilter: 'ALL',
       bookings: [],
       deletedBookings: [],
+      syncVersion: 0,
+      clearedAtVersion: 0,
+      hasSyncedOnce: false,
       currentViewingBooking: null
     };
 
@@ -3221,6 +3695,17 @@
         console.error(e);
       }
 
+      // Sync Metadata
+      try {
+        var rawMeta = localStorage.getItem(STORAGE_KEYS.SYNC_META);
+        if (rawMeta) {
+          var meta = JSON.parse(rawMeta);
+          AppState.syncVersion = meta.syncVersion || 0;
+          AppState.clearedAtVersion = meta.clearedAtVersion || 0;
+          AppState.hasSyncedOnce = !!meta.hasSyncedOnce;
+        }
+      } catch (e) {}
+
       // Bookings
       try {
         var rawBookings = localStorage.getItem(STORAGE_KEYS.BOOKINGS);
@@ -3232,7 +3717,7 @@
           });
         } else {
           AppState.bookings = generateInitialSampleBookings(AppState.startDate);
-          saveBookingsToStorage();
+          localStorage.setItem(STORAGE_KEYS.BOOKINGS, JSON.stringify(AppState.bookings));
         }
       } catch (e) {
         AppState.bookings = generateInitialSampleBookings(AppState.startDate);
@@ -3247,12 +3732,41 @@
       }
     }
 
+    function saveLocalStateOnly() {
+      try {
+        localStorage.setItem(STORAGE_KEYS.BOOKINGS, JSON.stringify(AppState.bookings));
+        localStorage.setItem(STORAGE_KEYS.DELETED_BOOKINGS, JSON.stringify(AppState.deletedBookings));
+        localStorage.setItem(STORAGE_KEYS.SETTINGS, JSON.stringify({
+          startDate: AppState.startDate,
+          daysCount: AppState.daysCount,
+          busCount: AppState.busCount,
+          loginUsername: AppState.loginUsername,
+          loginPassword: AppState.loginPassword
+        }));
+        localStorage.setItem(STORAGE_KEYS.SYNC_META, JSON.stringify({
+          syncVersion: AppState.syncVersion || 0,
+          clearedAtVersion: AppState.clearedAtVersion || 0,
+          hasSyncedOnce: !!AppState.hasSyncedOnce
+        }));
+      } catch (e) {}
+    }
+
+    var _cloudPushTimer = null;
+    function scheduleCloudPush() {
+      if (_cloudPushTimer) clearTimeout(_cloudPushTimer);
+      _cloudPushTimer = setTimeout(function() {
+        pushStateToCloud();
+      }, 80);
+    }
+
     function saveBookingsToStorage() {
       localStorage.setItem(STORAGE_KEYS.BOOKINGS, JSON.stringify(AppState.bookings));
+      scheduleCloudPush();
     }
 
     function saveDeletedBookingsToStorage() {
       localStorage.setItem(STORAGE_KEYS.DELETED_BOOKINGS, JSON.stringify(AppState.deletedBookings));
+      scheduleCloudPush();
     }
 
     function saveSettingsToStorage() {
@@ -3264,6 +3778,228 @@
         loginPassword: AppState.loginPassword
       };
       localStorage.setItem(STORAGE_KEYS.SETTINGS, JSON.stringify(s));
+      scheduleCloudPush();
+    }
+
+    /* ==========================================================================
+       C2. Real-Time Cloud Sync Engine (Phone <-> PC <-> Tablet)
+       ========================================================================== */
+    function buildCloudPayload() {
+      return {
+        syncVersion: AppState.syncVersion || 1,
+        clearedAtVersion: AppState.clearedAtVersion || 0,
+        deviceId: CLOUD_SYNC_CONFIG.DEVICE_ID,
+        settings: {
+          daysCount: AppState.daysCount,
+          busCount: AppState.busCount,
+          loginUsername: AppState.loginUsername || 'najaf',
+          loginPassword: AppState.loginPassword || '313'
+        },
+        bookings: AppState.bookings || [],
+        deletedBookings: AppState.deletedBookings || []
+      };
+    }
+
+    function pushStateToCloud() {
+      AppState.syncVersion = (AppState.syncVersion || 0) + 1;
+      AppState.hasSyncedOnce = true;
+      saveLocalStateOnly();
+
+      var payload = buildCloudPayload();
+      var jsonStr = JSON.stringify(payload);
+
+      // 1. Push to persistent REST Cloud Object
+      fetch(CLOUD_SYNC_CONFIG.REST_OBJ_URL, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json; charset=utf-8' },
+        body: JSON.stringify({
+          name: 'madinat_alata_bus_db',
+          data: payload
+        })
+      }).catch(function() {});
+
+      // 2. Push to real-time ntfy stream (instant SSE broadcast + cached history)
+      var ntfyBody = (jsonStr.length <= 3600)
+        ? jsonStr
+        : JSON.stringify({
+            syncVersion: payload.syncVersion,
+            deviceId: payload.deviceId,
+            notifyOnly: true
+          });
+
+      fetch(CLOUD_SYNC_CONFIG.NTFY_BASE, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain; charset=utf-8' },
+        body: ntfyBody
+      }).catch(function() {});
+    }
+
+    function applyCloudPayload(remote, isInitialSync) {
+      if (!remote || typeof remote !== 'object') return false;
+      if (!isInitialSync && remote.deviceId === CLOUD_SYNC_CONFIG.DEVICE_ID) return false;
+
+      if (remote.notifyOnly) {
+        fetchFromRestCloud();
+        return false;
+      }
+
+      if (!Array.isArray(remote.bookings)) return false;
+
+      var remoteVer = parseInt(remote.syncVersion, 10) || 0;
+      var localVer = parseInt(AppState.syncVersion, 10) || 0;
+
+      // If cloud is completely uninitialized (version 0), push our local state to initialize it
+      if (remoteVer === 0) {
+        pushStateToCloud();
+        return true;
+      }
+
+      // If we haven't synced this browser before, preserve any custom user-created bookings made offline/locally
+      var localCustomToMerge = [];
+      if (!AppState.hasSyncedOnce && Array.isArray(AppState.bookings)) {
+        var remoteDeletedIds = {};
+        if (Array.isArray(remote.deletedBookings)) {
+          remote.deletedBookings.forEach(function(d) { if (d && d.id) remoteDeletedIds[d.id] = true; });
+        }
+        var remoteIds = {};
+        remote.bookings.forEach(function(b) { if (b && b.id) remoteIds[b.id] = true; });
+
+        AppState.bookings.forEach(function(b) {
+          if (b && b.id && String(b.id).indexOf('b_sample_') !== 0 && !remoteIds[b.id] && !remoteDeletedIds[b.id]) {
+            localCustomToMerge.push(b);
+          }
+        });
+      }
+
+      if (remoteVer >= localVer || !AppState.hasSyncedOnce) {
+        AppState.syncVersion = Math.max(remoteVer, localVer);
+        AppState.clearedAtVersion = remote.clearedAtVersion || 0;
+        AppState.bookings = remote.bookings.slice();
+        if (Array.isArray(remote.deletedBookings)) {
+          AppState.deletedBookings = remote.deletedBookings.slice();
+        }
+        if (remote.settings) {
+          if (remote.settings.busCount) AppState.busCount = parseInt(remote.settings.busCount, 10) || 8;
+          if (remote.settings.daysCount) AppState.daysCount = parseInt(remote.settings.daysCount, 10) || 14;
+          if (remote.settings.loginUsername) AppState.loginUsername = remote.settings.loginUsername;
+          if (remote.settings.loginPassword) AppState.loginPassword = remote.settings.loginPassword;
+        }
+        AppState.hasSyncedOnce = true;
+
+        if (localCustomToMerge.length > 0) {
+          localCustomToMerge.forEach(function(b) { AppState.bookings.push(b); });
+          saveLocalStateOnly();
+          scheduleCloudPush();
+        } else {
+          saveLocalStateOnly();
+        }
+
+        syncControlsInputs();
+        if (AppState.isLoggedIn) {
+          renderTable();
+        }
+        return true;
+      }
+      return false;
+    }
+
+    function fetchFromRestCloud() {
+      return fetch(CLOUD_SYNC_CONFIG.REST_OBJ_URL + '?t=' + Date.now(), { cache: 'no-store' })
+        .then(function(r) { return r.ok ? r.json() : null; })
+        .then(function(obj) {
+          if (obj && obj.data) {
+            return obj.data;
+          }
+          return null;
+        })
+        .catch(function() { return null; });
+    }
+
+    function fetchFromNtfyHistory() {
+      return fetch(CLOUD_SYNC_CONFIG.NTFY_BASE + '/json?poll=1&since=all&t=' + Date.now(), { cache: 'no-store' })
+        .then(function(r) { return r.ok ? r.text() : ''; })
+        .then(function(text) {
+          if (!text) return null;
+          var lines = text.trim().split('\n');
+          var bestPayload = null;
+          var bestVer = -1;
+          for (var i = 0; i < lines.length; i++) {
+            try {
+              var evt = JSON.parse(lines[i]);
+              if (evt && evt.event === 'message' && evt.message) {
+                var parsed = JSON.parse(evt.message);
+                if (parsed && Array.isArray(parsed.bookings)) {
+                  var v = parseInt(parsed.syncVersion, 10) || 0;
+                  if (v >= bestVer) {
+                    bestVer = v;
+                    bestPayload = parsed;
+                  }
+                }
+              }
+            } catch (e) {}
+          }
+          return bestPayload;
+        })
+        .catch(function() { return null; });
+    }
+
+    function syncFromCloudNow() {
+      Promise.all([fetchFromNtfyHistory(), fetchFromRestCloud()]).then(function(results) {
+        var ntfyData = results[0];
+        var restData = results[1];
+        var ntfyVer = (ntfyData && ntfyData.syncVersion) ? parseInt(ntfyData.syncVersion, 10) : -1;
+        var restVer = (restData && restData.syncVersion !== undefined) ? parseInt(restData.syncVersion, 10) : -1;
+
+        var winner = null;
+        if (ntfyVer >= restVer && ntfyData) {
+          winner = ntfyData;
+        } else if (restData) {
+          winner = restData;
+        }
+
+        if (winner) {
+          applyCloudPayload(winner, true);
+        } else if (!AppState.hasSyncedOnce) {
+          pushStateToCloud();
+        }
+      });
+    }
+
+    var _ntfyEventSource = null;
+    function initCloudSync() {
+      // 1. Initial pull on startup
+      syncFromCloudNow();
+
+      // 2. Live Server-Sent Events stream for instant updates across Phone & PC
+      if (window.EventSource) {
+        try {
+          _ntfyEventSource = new EventSource(CLOUD_SYNC_CONFIG.NTFY_BASE + '/sse');
+          _ntfyEventSource.onmessage = function(e) {
+            try {
+              var wrapper = JSON.parse(e.data);
+              if (wrapper && wrapper.message) {
+                var remote = JSON.parse(wrapper.message);
+                applyCloudPayload(remote, false);
+              }
+            } catch (err) {}
+          };
+        } catch (e) {}
+      }
+
+      // 3. Re-sync when user switches back to tab/app or unlocks phone
+      window.addEventListener('focus', function() {
+        syncFromCloudNow();
+      });
+      document.addEventListener('visibilitychange', function() {
+        if (document.visibilityState === 'visible') {
+          syncFromCloudNow();
+        }
+      });
+
+      // 4. Periodic fallback sync every 10 seconds
+      setInterval(function() {
+        syncFromCloudNow();
+      }, 10000);
     }
 
     /* ==========================================================================
@@ -3282,6 +4018,7 @@
         document.getElementById('login-username').value = '';
         document.getElementById('login-password').value = '';
         applyAuthView();
+        syncFromCloudNow();
         showToast(t('toast_welcome'), 'success');
       } else {
         errorBox.style.display = 'block';
@@ -4356,6 +5093,7 @@
       applyLanguage();
       startLiveClock();
       applyAuthView();
+      initCloudSync();
     });
   </script>
   <!-- Back to Top Button -->
